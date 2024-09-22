@@ -4,22 +4,9 @@ import { renderUI } from "./UI.js";
 
 const searchBar = document.querySelector("input");
 const searchBtn = document.querySelector("button");
-let local = "seoul";
-const defaultUrl = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local + "?key=J6RNZHK3MQPDM4ZLZM7NWR9N7";
-
-fetch(defaultUrl, { mode: "cors"})
-.then(function(response) {
-    return response.json();
-})
-.then(function(response) {
-    return processData(response);
-})
-.then(function(response) {
-    renderUI(response);
-})
 
 searchBtn.addEventListener("click", ()=> {
-    local = searchBar.value;
+    const local = searchBar.value;
     let url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local + "?key=J6RNZHK3MQPDM4ZLZM7NWR9N7";
     
     fetch(url, { mode: "cors"})
@@ -33,13 +20,4 @@ searchBtn.addEventListener("click", ()=> {
         renderUI(response);
         searchBar.value = "";
     })
-})
-
-
-fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Seoul?key=J6RNZHK3MQPDM4ZLZM7NWR9N7", { mode: "cors"})
-.then(function(response) { 
-    return response.json();
-})
-.then(function(response) {
-    console.log(response);
 })

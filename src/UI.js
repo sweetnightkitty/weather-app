@@ -28,7 +28,6 @@ const currentTemp = document.querySelector(".currentTemp");
 const currentConditions = document.querySelector(".currentConditions");
 const todayHigh = document.querySelector(".todayHigh");
 const todayLow = document.querySelector(".todayLow");
-const currentTime = document.querySelector(".currentTime");
 const feelsLike = document.querySelector(".feelsLike");
 const uvindex = document.querySelector(".uvindex");
 const sunrise = document.querySelector(".sunrise");
@@ -76,6 +75,11 @@ export function renderUI(data) {
 
 
         }
+    })
+
+    const containers = document.querySelectorAll(".container");
+    containers.forEach((container) => {
+        container.style.visibility = "visible";
     })
 
     location.textContent = data.location;
