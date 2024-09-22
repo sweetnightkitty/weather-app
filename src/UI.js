@@ -11,12 +11,12 @@ const sunset = document.querySelector(".sunset");
 
 export function renderUI(data) {
     location.textContent = "City: " + data.location;
-    currentTemp.textContent = "Current Temp: " + data.currentTemp;
+    currentTemp.innerHTML = "Current Temp: " + data.currentTemp;
     currentConditions.textContent = "Current Conditions: " + data.currentConditions;
-    todayHigh.textContent = "Today's High: " + data.todayHigh;
-    todayLow.textContent = "Today's Low: " + data.todayLow;
+    todayHigh.innerHTML = "Today's High: " + data.todayHigh;
+    todayLow.innerHTML = "Today's Low: " + data.todayLow;
     currentTime.textContent = "Current TIme: " + data.currentTime;
-    feelsLike.textContent = "Feels like: " + data.feelsLike;
+    feelsLike.innerHTML = "Feels like: " + data.feelsLike;
     uvindex.textContent = "UV index: " + data.uvindex;
     sunrise.textContent = "Sunrise: " + data.sunrise;
     sunset.textContent = "Sunset: " + data.sunset;

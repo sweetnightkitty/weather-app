@@ -1,35 +1,37 @@
+export function processData(rawData) {
+    //Converts temps from F to C
+    const currentTemp = convertTemp(rawData.currentConditions.temp);
+    const todayHigh = convertTemp(rawData.days[0].tempmax);
+    const todayLow = convertTemp(rawData.days[0].tempmin);
+    const feelsLike = convertTemp(rawData.currentConditions.feelslike);
 
+    //Remove seconds and stores time as HH:MM
+    const currentTime = convertTime(rawData.currentConditions.datetime);
+    const sunrise = convertTime(rawData.currentConditions.sunrise);
+    const sunset = convertTime(rawData.currentConditions.sunset);
 
-
-export async function getWeatherData() {
-    const key = "J6RNZHK3MQPDM4ZLZM7NWR9N7";
-    const local = "Seoul";
-    const url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + local + "?key=" + key;
-
-    try {
-        const rawData = await fetch(url, { mode: "cors"}).then(function(response) { return response.json()});
-        process
-
-    } catch(error) {
-        console.log("error");
+    return {
+        location: rawData.address,
+        currentTemp: currentTemp,
+        currentConditions: rawData.currentConditions.conditions,
+        currentIcon: rawData.currentConditions.icon,
+        feelsLike: feelsLike,
+        uvindex: rawData.currentConditions.uvindex,
+        currentTime: currentTime,
+        sunrise: sunrise,
+        sunset: sunset,
+        todayHigh: todayHigh,
+        todayLow: todayLow,
     }
 }
 
+// Converts from F to C
+function convertTemp(fahrenheit) {
+    return (Math.floor((fahrenheit - 32) * 5 / 9)) + "&#176;C";
 
+}
 
-
-export function processData(rawData) {
-    return {
-        location: rawData.address,
-        currentTemp: rawData.currentConditions.temp,
-        currentConditions: rawData.currentConditions.conditions,
-        currentIcon: rawData.currentConditions.icon,
-        feelsLike: rawData.currentConditions.feelslike,
-        uvindex: rawData.currentConditions.uvindex,
-        currentTime: rawData.currentConditions.datetime,
-        sunrise: rawData.currentConditions.sunrise,
-        sunset: rawData.currentConditions.sunset,
-        todayHigh: rawData.days[0].tempmax,
-        todayLow: rawData.days[0].tempmin,
-    }
+//Removes the seconds from time
+function convertTime(time) {
+    return time.slice(0, -3);
 }
