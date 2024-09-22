@@ -13,6 +13,7 @@ export function processData(rawData) {
     //Ensures the first letter of the location starts with an Upper Case in the UI
     const location = capitalize(rawData.address);
 
+
     return {
         location: location,
         currentTemp: currentTemp,

@@ -34,3 +34,5 @@ searchBtn.addEventListener("click", ()=> {
         searchBar.value = "";
     })
 })
+
+
