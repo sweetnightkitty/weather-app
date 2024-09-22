@@ -10,8 +10,11 @@ export function processData(rawData) {
     const sunrise = convertTime(rawData.currentConditions.sunrise);
     const sunset = convertTime(rawData.currentConditions.sunset);
 
+    //Ensures the first letter of the location starts with an Upper Case in the UI
+    const location = capitalize(rawData.address);
+
     return {
-        location: rawData.address,
+        location: location,
         currentTemp: currentTemp,
         currentConditions: rawData.currentConditions.conditions,
         currentIcon: rawData.currentConditions.icon,
@@ -34,4 +37,8 @@ function convertTemp(fahrenheit) {
 //Removes the seconds from time
 function convertTime(time) {
     return time.slice(0, -3);
+}
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
