@@ -18,6 +18,5 @@ searchBtn.addEventListener("click", ()=> {
     })
     .then(function(response) {
         renderUI(response);
-        searchBar.value = "";
     })
-})
+});
