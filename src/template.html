@@ -6,24 +6,56 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="search">
+        <div class="input">
+            <input type="text" id="local" placeholder="Type a city" name="local">
+            <button>Search</button>
+        </div>
+    </div>
 
-    <input type="text" id="local" name="local">
-    <button>Search</button>
+    <div class= "weather-header">
+        <div class="weather-content">
+            <div class="location"></div>
+            <div class="currentTemp"></div>
+            <div class="currentConditions"></div>
+            <div class="hilow">
+                <div class="todayHigh"></div>
+                <div class="todayLow"></div>
+            </div>
+        </div>
+    </div>
 
-    <div class="location"></div>
-    <div class="currentTemp"></div>
-    <div class="currentConditions"></div>
-    <div class="todayHigh"></div>
-    <div class="todayLow"></div>
-    <div class="currentTime"></div>
+    <div class="timeline">
+        <div class="currentTime"></div>
+        <!-- hourly -->
+        <!-- 10 day-->
+    </div>
 
-    <!-- hourly -->
-    <!-- 10 day-->
 
-    <div class="feelsLike"></div>
-    <div class="uvindex"></div>
-    <div class="sunrise"></div>
-    <div class="sunset"></div>
+    <div class="other-data">
+        <div class="data-grid">
+            <div class="container feelsLike-container">
+                <div>Feels like: </div>
+                <div class="feelsLike"></div>
+            </div>
+
+            <div class="container uvindex-container">
+                <div>UV index:</div>
+                <div class="uvindex"></div>
+            </div>
+    
+            <div class="container sunrise-container">
+                <div>Sunrise:</div>
+                <div class="sunrise"></div>
+            </div>
+
+            <div class="container sunset-container">
+                <div>Sunset:</div>
+                <div class="sunset"></div>
+            </div>
+        </div>
+    </div>
+
     
 </body>
 </html>

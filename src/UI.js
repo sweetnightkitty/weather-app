@@ -10,14 +10,14 @@ const sunrise = document.querySelector(".sunrise");
 const sunset = document.querySelector(".sunset");
 
 export function renderUI(data) {
-    location.textContent = "City: " + data.location;
-    currentTemp.innerHTML = "Current Temp: " + data.currentTemp;
-    currentConditions.textContent = "Current Conditions: " + data.currentConditions;
-    todayHigh.innerHTML = "Today's High: " + data.todayHigh;
-    todayLow.innerHTML = "Today's Low: " + data.todayLow;
+    location.textContent = data.location;
+    currentTemp.innerHTML = data.currentTemp;
+    currentConditions.textContent = data.currentConditions;
+    todayHigh.innerHTML = "H: " + data.todayHigh;
+    todayLow.innerHTML = "L:" + data.todayLow;
     currentTime.textContent = "Current TIme: " + data.currentTime;
-    feelsLike.innerHTML = "Feels like: " + data.feelsLike;
-    uvindex.textContent = "UV index: " + data.uvindex;
-    sunrise.textContent = "Sunrise: " + data.sunrise;
-    sunset.textContent = "Sunset: " + data.sunset;
+    feelsLike.innerHTML = data.feelsLike;
+    uvindex.innerHTML = data.uvindex;
+    sunrise.textContent = data.sunrise;
+    sunset.textContent = data.sunset;
 }

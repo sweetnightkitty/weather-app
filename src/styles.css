@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+body>div {
+    flex: 1;
+    min-width: 100vw;
+}
+
+
+/* Main container div for each section */
+.search, .timeline, .weather-header, .other-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    max-height: 200px;
+}
+
+.weather-content {
+    text-align: center;
+}
+
+.hilow {
+    display: flex;
+    gap: 12px;
+}
+
+.location {
+    font-size: 28px;
+}
+
+.currentTemp {
+    font-size: 50px;
+}
+
+
+/* The div that contains the misc data */
+.data-grid {
+    display: flex;
+    min-height: 50%;
+    gap: 50px;
+}
+
+/* uvincex, feelslike, sunrise and sunset divs*/
+.data-grid .container {
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    min-width: 175px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: lightskyblue;
+    color: white;
+    font-weight: bold;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    margin-right: 10px;
+    cursor: pointer;
+    height: 30px;
+    width: 200px;
+    font-size: 18px;
+    padding: 0 5px;
+}
+
+button { 
+    color: white;
+    background-color: lightskyblue;
+    padding: 8px 5px;
+    border-radius: 5px;
+    border-color: skyblue;
+    cursor: pointer;
+}
