@@ -13,6 +13,24 @@ export function processData(rawData) {
     //Ensures the first letter of the location starts with an Upper Case in the UI
     const location = capitalize(rawData.address);
 
+    //Logs hourly weather info
+    const hours = rawData.days[0].hours;
+    const hourly = [];
+    hours.forEach((hour) => {
+        const datetime = convertTime(hour.datetime);
+        const icon = hour.icon;
+        const temp = convertTemp(hour.temp);
+
+        const object = {
+            datetime: datetime,
+            icon: icon,
+            temp: temp,
+        };
+
+        
+        hourly.push(object);
+        console.log(hourly.length);
+    })
 
     return {
         location: location,
@@ -26,12 +44,13 @@ export function processData(rawData) {
         sunset: sunset,
         todayHigh: todayHigh,
         todayLow: todayLow,
+        hourly: hourly,
     }
 }
 
 // Converts from F to C
 function convertTemp(fahrenheit) {
-    return (Math.floor((fahrenheit - 32) * 5 / 9)) + "&#176;C";
+    return (Math.floor((fahrenheit - 32) * 5 / 9));
 
 }
 

@@ -94,3 +94,18 @@ button {
     border-color: skyblue;
     cursor: pointer;
 }
+
+.hourly {
+    display: flex;
+    min-width: 50%;
+    gap: 50px;
+}
+
+.hour {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+}

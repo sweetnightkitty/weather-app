@@ -36,3 +36,10 @@ searchBtn.addEventListener("click", ()=> {
 })
 
 
+fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Seoul?key=J6RNZHK3MQPDM4ZLZM7NWR9N7", { mode: "cors"})
+.then(function(response) { 
+    return response.json();
+})
+.then(function(response) {
+    console.log(response);
+})
