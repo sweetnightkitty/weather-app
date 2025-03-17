@@ -29,7 +29,6 @@ export function processData(rawData) {
 
         
         hourly.push(object);
-        console.log(hourly.length);
     })
 
     return {
